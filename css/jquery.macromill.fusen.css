@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+.macromill-fusen {
+	position:absolute ;
+	overflow: hidden;
+	z-index: 100 ;
+	width: 400px ;
+	height: 120px ;
+	margin: 1px 1px 1px 1px;
+	
+	opacity: 0.85 ;
+	filter: alpha(opacity=85); 	/* for IE9 */
+	-ms-filter: "alpha(opacity=85)";	/* for IE8 */
+	background-color: #CCCCCC ;
+	
+	border-width: 1px ;
+	border-color: #FFFFFF ;
+	border-style: outset ;
+	border-radius: 4px ;
+
+	cursor: pointer;
+	
+}
+
+.macromill-fusen .macromill-fusen-titlebar {
+	position: relative;
+	left: 0px ;
+	top: 0px ;
+	
+	margin: 0 0 ;
+	padding: 0 0 0 0 ; 
+	width: 100% ;
+	height: 25px ;
+	
+	background-color: none ;
+	
+	border-bottom: 2px inset #FFFFFF ; 
+}
+
+.macromill-fusen .macromill-fusen-title { 
+	clear: both ;
+	position: relative ;
+	left: 10px ;
+	top: 7px ;
+	overflow: hidden;
+	
+	width: 100% ;
+	height: 20px ;
+	padding: 2 2 2 2;
+	
+	color: #444444 ;
+	text-indent: 5px ;
+	font-weight: 900 ;
+	font-size: 150% ;
+	text-align: left ;
+	text-shadow: -1px -1px 1px #000000, 1px 1px #ffffff ;
+}
+
+.macromill-fusen .macromill-fusen-titlebar-remove { 
+	position: absolute; 
+	float: right ;
+	top: 3px ;
+	right: 3px;
+	height: 17px ;
+	widht: 12px ;
+	
+	background-color: #FFFFFF ;
+	border: 1px solid #808080 ;
+	cursor: pointer;
+	
+	text-align: center ;
+	vertical-align: middle ;
+}
+
+.macromill-fusen .macromill-fusen-title-edit {
+    overflow: hidden ; 
+	width: 100% ;
+
+	position: relative; 
+    padding: 0 0 0 0 ;
+	margine: 0 0 0 0 ;
+    border: 0.5px solid #AAAAAA;
+
+	font-size: 150% ;
+	text-align: left ;
+}
+
+.macromill-fusen .macromill-fusen-memo-box {
+    overflow: hidden ; 
+
+	left: 0px ;
+	top: 0px ;
+	
+	width: 100% ;
+	height: 100% ;
+	padding: 3px 3px 3px 3px ;
+	margine: 0 0 0 0 ;
+    border: 0px solid #FFFFFF;
+	background-color: transparent ; 
+}
+
+.macromill-fusen .macromill-fusen-memo {
+	overflow: hidden ;
+
+	padding: 0 0 0 0 ; 
+	margine: 0 0 0 0 ;
+    border: 0px solid #FFFFFF;
+	background-color: transparent ; 
+
+	font-size: 100% ;
+}
+.macromill-fusen .macromill-fusen-edit {
+    overflow: hidden ; 
+
+	position: relative; 
+    padding: 0 0 0 0 ;
+	margine: 0 0 0 0 ;
+    border: 0px solid #FFFFFF;
+}
