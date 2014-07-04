@@ -1,0 +1,32 @@
+﻿{
+    "name": "macromill.fusen",
+    "version": "1.0.0",
+    "title": "Fusen = Sticky. Use with callback.",
+    "author": {
+        "name": "Ryoichi Ohkubo (Macromill)",
+        "url": "http://www.macromill.com/global/index.html"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.3",
+        "jquery-ui-core": ">=1.9"
+    },
+    "description": "Fusen is the sticky in Japan. This Plugin is possible to save the state using a callback.",
+    "keywords": [
+        "sticky",
+        "ui",
+        "jquery",
+        "callback",
+        "fusen"
+    ],
+    "homepage": "https://github.com/ryoichiohkubo/macromill.fusen",
+    "download": "https://github.com/ryoichiohkubo/macromill.fusen/archive/master.zip",
+    "docs": "",
+    "demo": ""
+    
+}
