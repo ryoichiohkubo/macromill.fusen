@@ -8,18 +8,23 @@ Macromill Fusen
 
 ##Usage
 1. Include JQuery:
+'html
     <script src="/js/jquery.min.js" type="text/javascript"></script>
     <script src="/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+'
 2. Include plugin's code:
+'html
     <script src="/js/jquery.macromill.fusen.js" type="text/javascript"></script>
     <link type="text/css" rel="stylesheet" href="/css/jquery.macromill.fusen.css" />
+'
 3. Call the plugin:
+'javascript
     $('<div>').macromillFusen({
       resizeStop: resizeStopCallback
       ,dragStop: dragStopCallback
       ,remove: removeCallback
       ,edit: editCallback
     });
- 
+' 
 
 ##Options
