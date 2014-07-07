@@ -1,7 +1,7 @@
 ﻿{
     "name": "macromill.fusen",
-    "version": "1.0.0",
-    "title": "Fusen = Sticky. Use with callback.",
+    "version": "1.0.1",
+    "title": "付箋(Sticky)",
     "author": {
         "name": "Ryoichi Ohkubo (Macromill)",
         "url": "http://www.macromill.com/global/index.html"
@@ -26,7 +26,7 @@
     ],
     "homepage": "https://github.com/ryoichiohkubo/macromill.fusen",
     "download": "https://github.com/ryoichiohkubo/macromill.fusen/archive/master.zip",
-    "docs": "",
+    "docs": "https://github.com/ryoichiohkubo/macromill.fusen#readme",
     "demo": ""
     
 }
