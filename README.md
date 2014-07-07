@@ -1,4 +1,4 @@
-macromill.fusen
+Macromill Fusen
 ===============
 
-initial
+_ title _
