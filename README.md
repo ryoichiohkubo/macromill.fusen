@@ -1,4 +1,4 @@
 Macromill Fusen
 ===============
 
-__Fusen is the sticky in Japan. This Plugin is possible to save the state using a callback.__
+####Fusen is the sticky in Japan. This Plugin is possible to save the state using a callback.
