@@ -51,7 +51,6 @@ Macromill Fusen
 
 ##Options
 These options are default:  
-
 ```javascript
 {
     //The Unique Id of Fusen. Null means new Fusen, then it numbered in this program.
