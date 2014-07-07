@@ -3,10 +3,18 @@ Macromill Fusen
 
 ####Fusen is the sticky in Japan. This Plugin is possible to save the state using a callback.
 
-このプラグインを使うとWebページに付箋を貼り付けることができます。ページ上の好きな位置に移動し、大きさを変え、タイトルとメモを編集できます。  
-また移動、サイズ変更、編集、削除に対応する callbac 関数を options で渡すことができます。引数でその時点の付箋の状態(Options)が渡されるので callback を通じて付箋の内容を永続化することができます。詳しくはサンプルを見て下さい。
+About
+-----------
+You can paste a sticky note(Fusen) on the Web page.
+Navigate to the desired location on the page, and change the size, and you can edit the title and notes.  
+You can pass the callback function corresponding move, resize, edit, and remove in the options.
+The callback is passed the state of Fusen of that time by the argument named 'current', the same format as the Options.
+So you are able to persist the contents of the Fusen in the callback.  
+Take a look at the sample for more information.
 
-##Usage
+Usage
+-----------
+
 * Include JQuery:
 
 ```html
@@ -49,8 +57,11 @@ Macromill Fusen
     });
 ```  
 
-##Options
+Options
+-----------
+
 These options are default:  
+
 ```javascript
 {
     //The Unique Id of Fusen. Null means new Fusen, then it numbered in this program.
@@ -83,4 +94,6 @@ These options are default:
     ,"remove": null
 };
 ```  
+**The argument 'current' of each callback function represent the state of Fusen.**  
+**The same format as the Options.**
 
