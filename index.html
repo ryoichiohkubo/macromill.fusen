@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,136 +25,297 @@
 	<script src="js/jquery.macromill.fusen.min.js"></script>
 
     <title>Macromill.fusen Demo</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Bootstrap theme</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+      <a id="forkme_banner" href="https://github.com/ryoichiohkubo/macromill.fusen">View on GitHub</a>
 
+      <h1 id="project_title">Macromill.fusen</h1>
+      <h2 id="project_tagline">Demo Page</h2>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ryoichiohkubo/macromill.fusen">View on GitHub</a>
-
-          <h1 id="project_title">Macromill.fusen</h1>
-          <h2 id="project_tagline">Demo Page</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ryoichiohkubo/macromill.fusen/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ryoichiohkubo/macromill.fusen/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-
-<div class="container">
-      <p>
-        <button type="button" class="btn btn-lg btn-default">Default</button>
-        <button type="button" class="btn btn-lg btn-primary">Primary</button>
-        <button type="button" class="btn btn-lg btn-success">Success</button>
-        <button type="button" class="btn btn-lg btn-info">Info</button>
-        <button type="button" class="btn btn-lg btn-warning">Warning</button>
-        <button type="button" class="btn btn-lg btn-danger">Danger</button>
-        <button type="button" class="btn btn-lg btn-link">Link</button>
-      </p>
+        <section id="downloads">
+          <a class="zip_download_link" href="https://github.com/ryoichiohkubo/macromill.fusen/zipball/master">Download this project as a .zip file</a>
+          <a class="tar_download_link" href="https://github.com/ryoichiohkubo/macromill.fusen/tarball/master">Download this project as a tar.gz file</a>
+        </section>
+    </header>
 </div>
 
 
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+
+<!-- Demo Area -->
+<h2><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Clic "new Fusen" Button to add Fusen.</h2>
+<p>ボタンをクリックすると付箋を追加できます。
+位置を移動し、サイズを変更し、タイトルとメモを編集することができます。
+このデモでは Local Strage に付箋を保存しています。ページを再表示すると保存した付箋が再現されます。</p>
+
+<div class="container">
+	<p><button type="button" class="btn btn-lg btn-default" id="addFusen">new Fusen</button></p>
+	<div id="fusenContainer" style="height:300px; width:100%;">
+	</div>
+</div>
 
 
-<pre>
-aaaaaaaaa
-bbbbbbbbbbb
-ccccccccc
-</pre>
 
-<code>
-aaa
-bbb
-cc
-</code>
+<!-- Sample Code -->
+<h2><a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Sample Code</h2>
 
-aa
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h4>Update Callback</h4>
+<p>Local Strage から保存済みの付箋を全て読み出し、同じ serialNo の付箋を削除します。
+続いて、引数 current を読み出した付箋リストに追加します。
+最後に付箋のリストを Local Strage に保存します。</p>
+
+<pre><code>var storeKey = "ADMINMENU_FUSEN";	//Local Storage Store Key
+updateCallback = function (event, current) {
+	//Get all data from Local Storage.
+	var storedAll = $.parseJSON(window.localStorage.getItem(storeKey));
+	if (storedAll == null) {
+		storedAll = [];
+	}
+	//Remove the data of which same 'serialNo'.
+	for (var i=0; i&lt;storedAll.length; i++) {
+		if (storedAll[i].serialNo == current.serialNo) {
+			storedAll.splice(i, 1);
+		}
+	}
+	for (var i=0; i&lt;storedAll.length; i++) {
+		storedAll[i].settings.memo = storedAll[i].settings.memo.replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
+	}
+	
+	//Add current settings to loaded deta.
+	storedAll.push({"serialNo": current.serialNo ,"settings": current});
+
+	//Save to Local Storage.
+	window.localStorage.removeItem(storeKey);
+	window.localStorage.setItem(storeKey, window.JSON.stringify(storedAll));
+
+	return true;
+}
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<h4>Remove Callback</h4>
+<p>Local Strage から保存済みの付箋を全て読み出し、同じ serialNo の付箋を削除します。
+付箋のリストを Local Strage に保存します。</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<pre><code>removeCallback = function(event, current) {
+	//Get all data from Local Storage.
+	var storedAll = $.parseJSON(window.localStorage.getItem(storeKey));
+	if (storedAll == null) {
+		storedAll = [];
+	}
+	//Remove the data of which same 'serialNo'.
+	for (var i=0; i&lt;storedAll.length; i++) {
+		if (storedAll[i].serialNo == current.serialNo) {
+			storedAll.splice(i, 1);
+		}
+	}
+	for (var i=0; i&lt;storedAll.length; i++) {
+		storedAll[i].settings.memo = storedAll[i].settings.memo.replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
+	}
+	//Save to Local Storage.
+	window.localStorage.removeItem(storeKey);
+	window.localStorage.setItem(storeKey, window.JSON.stringify(storedAll));
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+	return true;
+}
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<h4>Set up "new Fusen" Button</h4>
+<p>"new Fusen" Button を Click した時に付箋を追加するように設定します。</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<pre><code>$('#addFusen')
+.bind('click',function(event){
+	var _offset = $(this).offset();
+	
+	//Create Fusen.
+	$('&lt;div>').macromillFusen({
+		offset: _offset
+		,resizeStop: updateCallback
+		,dragStop: updateCallback
+		,remove: removeCallback
+		,edit: updateCallback
+	});
+})
+.css({
+	cursor: 'pointer'
+})
+</code></pre>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+<h4>Data load from Local Strage</h4>
+<p>Local Strage から保存済みの付箋を全て読み出して、それぞれ付箋に設定します。
+位置、サイズ、メモ内容などは保存したものをそのまま使用します。callBack function だけマージします。</p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Macromill.fusen maintained by <a href="https://github.com/ryoichiohkubo">ryoichiohkubo</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+<pre><code>//Get all data from Local Storage.
+var storedAll = $.parseJSON(window.localStorage.getItem(storeKey));
+if (storedAll == null) {
+	return;
+}
 
-    
+//Create Fusen to initial display.
+for (var i=0; i&lt;storedAll.length; i++) {
+	//set callback functions.
+	var option = $.extend({
+	}, storedAll[i].settings || {});
+	option.resizeStop = updateCallback;
+	option.dragStop = updateCallback;
+	option.remove = removeCallback;
+	option.edit = updateCallback;
 
-  </body>
+	//create fusen. 
+	$('&lt;div>').macromillFusen(option);
+}
+</code></pre>
+
+
+  </section>
+</div>
+
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p class="copyright">Macromill.fusen maintained by <a href="https://github.com/ryoichiohkubo">ryoichiohkubo</a></p>
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
+
+
+
+
+<script>
+$(function(){
+	/*
+	 * callBack
+	 */
+	//Update function
+	var storeKey = "ADMINMENU_FUSEN";	//Local Storage Store Key
+	updateCallback = function (event, current) {
+
+		if (typeof window.localStorage == 'undefined') {
+			alert('localstrage disabled.');
+			return;
+		}
+
+		//Get all data from Local Storage.
+		var storedAll = $.parseJSON(window.localStorage.getItem(storeKey));
+		if (storedAll == null) {
+			storedAll = [];
+		}
+		
+		//Remove the data of which same 'serialNo'.
+		for (var i=0; i<storedAll.length; i++) {
+			if (storedAll[i].serialNo == current.serialNo) {
+				storedAll.splice(i, 1);
+			}
+		}
+		
+		//TODO Temporary.  $.parseJSON()すると「"、\」のエスケープが解除されて次回読み込みエラーになってしまうので。
+		for (var i=0; i<storedAll.length; i++) {
+			storedAll[i].settings.memo = storedAll[i].settings.memo.replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
+		}
+		
+		//Add current settings to loaded deta.
+		storedAll.push({"serialNo": current.serialNo ,"settings": current});
+
+		//Save to Local Storage.
+		window.localStorage.removeItem(storeKey);
+		window.localStorage.setItem(storeKey, window.JSON.stringify(storedAll));
+
+		return true;
+	}
+	
+	//Delete function
+	removeCallback = function(event, current) {
+		if (typeof window.localStorage == 'undefined') {
+			alert('localstrage disabled.');
+			return;
+		}
+
+		//Get all data from Local Storage.
+		var storedAll = $.parseJSON(window.localStorage.getItem(storeKey));
+		if (storedAll == null) {
+			storedAll = [];
+		}
+		
+		//Remove the data of which same 'serialNo'.
+		for (var i=0; i<storedAll.length; i++) {
+			if (storedAll[i].serialNo == current.serialNo) {
+				storedAll.splice(i, 1);
+			}
+		}
+		
+		//TODO Temporary. $.parseJSON()すると「"、\」のエスケープが解除されて次回読み込みエラーになってしまうので。
+		for (var i=0; i<storedAll.length; i++) {
+			storedAll[i].settings.memo = storedAll[i].settings.memo.replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
+		}
+
+		//Save to Local Storage.
+		window.localStorage.removeItem(storeKey);
+		window.localStorage.setItem(storeKey, window.JSON.stringify(storedAll));
+
+		return true;
+	}
+
+	/*
+	 * Set 'Fusen' button, and set up Click event.
+	 */
+	$('#addFusen')
+	.bind('click',function(event){
+		
+		var _offset = $(this).offset();
+		
+		//Create Fusen.
+		$('<div>').macromillFusen({
+			offset: _offset
+			,resizeStop: updateCallback
+			,dragStop: updateCallback
+			,remove: removeCallback
+			,edit: updateCallback
+		});
+	})
+	.css({
+		cursor: 'pointer'
+	})
+
+	 
+	/*
+	 * Get all data from Local Storage, and create Fusen for initial display.
+	 */
+	if (typeof window.localStorage == 'undefined') {
+		return;
+	}
+	
+	//Get all data from Local Storage.
+	var storedAll = $.parseJSON(window.localStorage.getItem(storeKey));
+	if (storedAll == null) {
+		return;
+	}
+	
+	//Create Fusen to initial display.
+	for (var i=0; i<storedAll.length; i++) {
+		//set callback functions.
+		var option = $.extend({
+		}, storedAll[i].settings || {});
+		option.resizeStop = updateCallback;
+		option.dragStop = updateCallback;
+		option.remove = removeCallback;
+		option.edit = updateCallback;
+
+		//create fusen. 
+		$('<div>').macromillFusen(option);
+	}
+})
+</script>
+
+</body>
 </html>
