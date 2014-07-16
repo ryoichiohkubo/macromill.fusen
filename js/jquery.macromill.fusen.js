@@ -38,9 +38,7 @@
 			var fusen = $(this)
 			.addClass('macromill-fusen')
 			.resizable({
-				ghost: true
-				,autoHide: true
-				,stop: function(event) {
+				stop: function(event) {
 					if (settings.resizeStop != null) {
 						settings.resizeStop(event, fusen._current());
 					}
@@ -59,8 +57,15 @@
 			.addClass('macromill-fusen-titlebar')
 			.prependTo(fusen);
 
+			//Title
+			var title = $('<div>')
+			.uniqueId()
+			.addClass("macromill-fusen-title")
+			.html(settings.title)
+			.appendTo(titleBar);
+			
 			//Remove button in Title bar.
-			var titlebarRemove = $("<span>&nbsp;&#967;&nbsp;</span>")
+			var titlebarRemove = $("<span>&nbsp;&#935;&nbsp;</span>")
 			.addClass('macromill-fusen-titlebar-remove')
 			.attr("role", "button")
 			.click(function( event ) {		//Remove event
@@ -71,13 +76,6 @@
 				}
 				fusen.remove();
 			})
-			.appendTo(titleBar);
-			
-			//Title
-			var title = $('<span>')
-			.uniqueId()
-			.addClass("macromill-fusen-title")
-			.html(settings.title)
 			.appendTo(titleBar);
 			
 			//Memo
@@ -120,6 +118,7 @@
 				top: _offset.top
 				,left: _offset.left
 			});
+			
 			if (settings.size != null) {
 				fusen.height(settings.size.height);
 				fusen.width(settings.size.width);

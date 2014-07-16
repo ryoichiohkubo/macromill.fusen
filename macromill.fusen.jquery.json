@@ -1,6 +1,6 @@
 ﻿{
     "name": "macromill.fusen",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "title": "付箋(Sticky)",
     "author": {
         "name": "Ryoichi Ohkubo (Macromill)",
@@ -27,6 +27,6 @@
     "homepage": "https://github.com/ryoichiohkubo/macromill.fusen",
     "download": "https://github.com/ryoichiohkubo/macromill.fusen/archive/master.zip",
     "docs": "https://github.com/ryoichiohkubo/macromill.fusen#readme",
-    "demo": ""
+    "demo": "http://ryoichiohkubo.github.com/macromill.fusen/"
     
 }
