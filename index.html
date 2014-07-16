@@ -55,9 +55,11 @@
 
 <!-- Demo Area -->
 <h2><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Clic "new Fusen" Button to add Fusen.</h2>
-<p>ボタンをクリックすると付箋を追加できます。
-位置を移動し、サイズを変更し、タイトルとメモを編集することができます。
-このデモでは Local Strage に付箋を保存しています。ページを再表示すると保存した付箋が再現されます。</p>
+<p>Add the fusen.
+You can move the position, resize and edit the title and notes.<br/>
+In this demo, the fusen is stored to Local Strage.
+When you refresh the page, the fusen will appear same position, same size, and also same title and notes.
+</p>
 
 <div class="container">
 	<p><button type="button" class="btn btn-lg btn-success" id="addFusen">new Fusen</button></p>
@@ -71,9 +73,11 @@
 <h2><a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Sample Code</h2>
 
 <h4>Update Callback</h4>
-<p>Local Strage から保存済みの付箋を全て読み出し、同じ serialNo の付箋を削除します。
-続いて、引数 current を読み出した付箋リストに追加します。
-最後に付箋のリストを Local Strage に保存します。</p>
+<p>1. Reads all the fusen saved from Local Strage.<br/>
+2. Remove the fusen of the same serialNo of argument "current" from the list.<br/>
+3. Add the argument "current" to the list.<br/>
+4. Save the list to Local Strage
+</p>
 
 <pre><code>//Local Storage Store Key
 var storeKey = "FUSEN_DEMO";
@@ -106,8 +110,10 @@ updateCallback = function (event, current) {
 
 
 <h4>Remove Callback</h4>
-<p>Local Strage から保存済みの付箋を全て読み出し、同じ serialNo の付箋を削除します。
-付箋のリストを Local Strage に保存します。</p>
+<p>1. Reads all the fusen saved from Local Strage.<br/>
+2. Remove the fusen of the same serialNo of argument "current" from the list.<br/>
+3. Save the list to Local Strage
+</p>
 
 <pre><code>removeCallback = function(event, current) {
 	//Get all data from Local Storage.
@@ -134,7 +140,9 @@ updateCallback = function (event, current) {
 
 
 <h4>Set up "new Fusen" Button</h4>
-<p>"new Fusen" Button を Click した時に付箋を追加するように設定します。</p>
+<p>1. Set the click event of the "new Fusen" Button.<br/>
+2. Add &lt;div> element and turn to the fusen.
+</p>
 
 <pre><code>$('#addFusen')
 .bind('click',function(event){
@@ -156,8 +164,11 @@ updateCallback = function (event, current) {
 
 
 <h4>Load data from Local Strage</h4>
-<p>Local Strage から保存済みの付箋を全て読み出して、それぞれ付箋に設定します。
-位置、サイズ、メモ内容などは保存したものをそのまま使用します。callBack function だけマージします。</p>
+<p>1. Reads all the fusen saved from Local Strage.<br/>
+2. Add &lt;div> element and turn to the fusen respectively.<br/>
+* Position, size, title, notes, can accept the value read from the Local Strage.<br/>
+* Merge only callBack function.
+</p>
 
 <pre><code>//Get all data from Local Storage.
 var storedAll = $.parseJSON(window.localStorage.getItem(storeKey));
