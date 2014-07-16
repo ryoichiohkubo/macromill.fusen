@@ -60,7 +60,7 @@
 			.prependTo(fusen);
 
 			//Remove button in Title bar.
-			var titlebarRemove = $("<span>&nbsp;&#967;&nbsp;</span>")
+			var titlebarRemove = $("<div>&nbsp;&#935;&nbsp;</div>")
 			.addClass('macromill-fusen-titlebar-remove')
 			.attr("role", "button")
 			.click(function( event ) {		//Remove event

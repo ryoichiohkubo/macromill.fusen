@@ -57,9 +57,9 @@
 このデモでは Local Strage に付箋を保存しています。ページを再表示すると保存した付箋が再現されます。</p>
 
 <div class="container">
-	<p><button type="button" class="btn btn-lg btn-default" id="addFusen">new Fusen</button></p>
-	<div id="fusenContainer" style="height:300px; width:100%;">
-	</div>
+	<p><button type="button" class="btn btn-lg btn-success" id="addFusen">new Fusen</button></p>
+</div>
+<div id="fusenContainer" style="height:300px; width:100%;">
 </div>
 
 
@@ -72,7 +72,8 @@
 続いて、引数 current を読み出した付箋リストに追加します。
 最後に付箋のリストを Local Strage に保存します。</p>
 
-<pre><code>var storeKey = "ADMINMENU_FUSEN";	//Local Storage Store Key
+<pre><code>//Local Storage Store Key
+var storeKey = "FUSEN_DEMO";
 updateCallback = function (event, current) {
 	//Get all data from Local Storage.
 	var storedAll = $.parseJSON(window.localStorage.getItem(storeKey));
@@ -151,7 +152,7 @@ updateCallback = function (event, current) {
 </code></pre>
 
 
-<h4>Data load from Local Strage</h4>
+<h4>Load data from Local Strage</h4>
 <p>Local Strage から保存済みの付箋を全て読み出して、それぞれ付箋に設定します。
 位置、サイズ、メモ内容などは保存したものをそのまま使用します。callBack function だけマージします。</p>
 
@@ -198,7 +199,8 @@ $(function(){
 	 * callBack
 	 */
 	//Update function
-	var storeKey = "ADMINMENU_FUSEN";	//Local Storage Store Key
+	//Local Storage Store Key
+	var storeKey = "FUSEN_DEMO";
 	updateCallback = function (event, current) {
 
 		if (typeof window.localStorage == 'undefined') {

@@ -41,7 +41,7 @@
 	clear: both ;
 	position: relative ;
 	left: 10px ;
-	top: 7px ;
+	top: 0px ;
 	overflow: hidden;
 	
 	width: 100% ;
@@ -51,9 +51,10 @@
 	color: #444444 ;
 	text-indent: 5px ;
 	font-weight: 900 ;
-	font-size: 150% ;
+	font-size: 130% ;
 	text-align: left ;
 	text-shadow: -1px -1px 1px #000000, 1px 1px #ffffff ;
+	vertical-align: middle;
 }
 
 .macromill-fusen .macromill-fusen-titlebar-remove { 
@@ -64,12 +65,14 @@
 	height: 17px ;
 	widht: 12px ;
 	
+	margin: 0 0 ;
+	padding: 0 0 0 0 ; 
 	background-color: #FFFFFF ;
 	border: 1px solid #808080 ;
 	cursor: pointer;
 	
 	text-align: center ;
-	vertical-align: middle ;
+	vertical-align: top ;
 }
 
 .macromill-fusen .macromill-fusen-title-edit {
