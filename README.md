@@ -12,6 +12,10 @@ The callback is passed the state of Fusen of that time by the argument named 'cu
 So you are able to persist the contents of the Fusen in the callback.  
 Take a look at the sample for more information.
 
+<a href="http://ryoichiohkubo.github.com/macromill.fusen/" target="_brank">Demo</a>
+-----------
+
+
 Usage
 -----------
 
