@@ -6,8 +6,8 @@
 	z-index: 100 ;
 	width: 400px ;
 	height: 120px ;
-	margin: 1px 1px 1px 1px;
-	padding: 0 0 0 0 ; 
+	margin: 0 0 0 0 ;
+	padding: 1px 1px 1px 1px ; 
 	
 	opacity: 0.85 ;
 	filter: alpha(opacity=85); 	/* for IE9 */
